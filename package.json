@@ -1,0 +1,30 @@
+{
+  "name": "ts-package-skeleton",
+  "version": "0.0.0",
+  "description": "The most complicated Hello World for providing a fully working node package using TypeScript and Jest.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "author": "Julian Strecker",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  }
+}
